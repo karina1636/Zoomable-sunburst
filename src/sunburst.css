@@ -1,0 +1,16 @@
+.tooltip {
+    position: absolute;
+    background-color: white;
+    border: 0.5px solid black;
+    padding: 5px;
+    border-radius: 1px;
+    visibility: hidden;
+    font-size: 2.5px; /* Reducing font size */
+    max-width: 50px; /* Limiting maximum width */
+    word-wrap: break-word; /* Ensuring text wraps within the box */
+  }
+  
+  .tooltip img {
+    width: 30px; /* Reducing image size */
+  }
+  
