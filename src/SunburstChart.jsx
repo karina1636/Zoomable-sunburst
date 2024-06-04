@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
- import './sunburst.css';
+import './sunburst.css';
 
 const SunburstChart = ({ data }) => {
   const svgRef = useRef();
@@ -8,7 +8,7 @@ const SunburstChart = ({ data }) => {
 
   useEffect(() => {
     // Dimensiones del gráfico
-    const width = 2500;
+    const width = 8500;
     const height = width;
     const radius = width / 6;
 
@@ -37,7 +37,7 @@ const SunburstChart = ({ data }) => {
     // Crear contenedor SVG
     const svg = d3.select(svgRef.current)
       .attr("viewBox", [-width / 2, -height / 2, width, width])
-      .style("font", "25px sans-serif");
+      .style("font", "95.9px sans-serif");
 
     // Agregar arcos
     const path = svg.append("g")
@@ -153,7 +153,7 @@ const SunburstChart = ({ data }) => {
   return (
     <>
       <svg ref={svgRef}></svg>
-      <div ref={tooltipRef} className="tooltip" style={{ position: 'absolute', backgroundColor: 'white', border: '1px solid black', padding: '10px', borderRadius: '5px', visibility: 'hidden' }}></div>
+      <div ref={tooltipRef} className="tooltip" style={{ position: 'absolute', backgroundColor: 'white', border: '1px solid black', padding: '80px', borderRadius: '5px', visibility: 'hidden' }}></div>
     </>
   );
 };
