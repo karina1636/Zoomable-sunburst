@@ -60,7 +60,6 @@ const SunburstChart = ({ data }) => {
       tooltip.html(`
         <div class="category"><strong>Categoria:</strong> ${d.data.categoria || ''}</div>
         <div class="name"><strong>Nombre:</strong> ${d.data.name}</div>
-        <div class="image"><img src="https://via.placeholder.com/100" alt="Imagen"></div>
         <div class="trl"><strong>TRL:</strong> ${d.data.madurez || ''}</div>
         <div class="description"><strong>Descripción:</strong><p>${d.data.description || ''}</p></div>
         <div class="bottom">
