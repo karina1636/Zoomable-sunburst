@@ -7,15 +7,13 @@ const SunburstChart = ({ data }) => {
   const tooltipRef = useRef();
 
   useEffect(() => {
-    // Dimensiones del gráfico
-    const width = 8500;
+    const container = d3.select(svgRef.current).node().parentNode;
+    const width = container.clientWidth;
     const height = width;
     const radius = width / 6;
 
-    // Crear escala de colores
     const color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
 
-    // Calcular la jerarquía de datos
     const hierarchy = d3.hierarchy(data)
       .sum(d => d.value)
       .sort((a, b) => b.value - a.value);
@@ -25,7 +23,6 @@ const SunburstChart = ({ data }) => {
 
     root.each(d => d.current = d);
 
-    // Crear generador de arcos
     const arc = d3.arc()
       .startAngle(d => d.x0)
       .endAngle(d => d.x1)
@@ -34,12 +31,10 @@ const SunburstChart = ({ data }) => {
       .innerRadius(d => d.y0 * radius)
       .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1));
 
-    // Crear contenedor SVG
     const svg = d3.select(svgRef.current)
-      .attr("viewBox", [-width / 2, -height / 2, width, width])
-      .style("font", "95.9px sans-serif");
+      .attr("viewBox", [-width / 2, -height / 2, width, height])
+      .style("font", "13.5px sans-serif");
 
-    // Agregar arcos
     const path = svg.append("g")
       .selectAll("path")
       .data(root.descendants().slice(1))
@@ -52,22 +47,27 @@ const SunburstChart = ({ data }) => {
       .attr("pointer-events", d => arcVisible(d.current) ? "auto" : "none")
       .attr("d", d => arc(d.current));
 
-    // Agregar tooltip
     const tooltip = d3.select(tooltipRef.current)
       .style("visibility", "hidden");
 
     path.on("mouseover", (event, d) => {
+      const categoria = d.data.categoria ? `<div class="category"><strong>Categoria:</strong> ${d.data.categoria}</div>` : '';
+      const nombre = d.data.name ? `<div class="name"><strong>Nombre:</strong> ${d.data.name}</div>` : '';
+      const trl = d.data.madurez ? `<div class="trl"><strong>TRL:</strong> ${d.data.madurez}</div>` : '';
+      const descripcion = d.data.description ? `<div class="description"><strong>Descripción:</strong><p>${d.data.description}</p></div>` : '';
+      const oportunidades = d.data.oportunidades ? `<div class="opportunities"><strong>Oportunidades:</strong><p>${d.data.oportunidades}</p></div>` : '';
+      const tensiones = d.data.tensiones ? `<div class="tensions"><strong>Tensiones:</strong><p>${d.data.tensiones}</p></div>` : '';
+
       tooltip.html(`
-        <div class="category"><strong>Categoria:</strong> ${d.data.categoria || ''}</div>
-        <div class="name"><strong>Nombre:</strong> ${d.data.name}</div>
-        <div class="trl"><strong>TRL:</strong> ${d.data.madurez || ''}</div>
-        <div class="description"><strong>Descripción:</strong><p>${d.data.description || ''}</p></div>
+        ${categoria}
+        ${nombre}
+        ${trl}
+        ${descripcion}
         <div class="bottom">
-          <div class="opportunities"><strong>Oportunidades:</strong><p>${d.data.oportuniades || ''}</p></div>
-          <div class="tensions"><strong>Tensiones:</strong><p>${d.data.tensiones || ''}</p></div>
+          ${oportunidades}
+          ${tensiones}
         </div>
-      `)
-      .style("visibility", "visible");
+      `).style("visibility", "visible");
     })
     .on("mousemove", (event) => {
       tooltip.style("top", `${event.pageY - 10}px`)
@@ -77,7 +77,6 @@ const SunburstChart = ({ data }) => {
       tooltip.style("visibility", "hidden");
     });
 
-    // Funciones auxiliares
     function arcVisible(d) {
       return d.y1 <= 3 && d.y0 >= 1 && d.x1 > d.x0;
     }
@@ -92,7 +91,10 @@ const SunburstChart = ({ data }) => {
       return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
     }
 
-    // Manejar clics para hacer zoom
+    function shortenText(text, maxLength) {
+      return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+    }
+
     function clicked(event, p) {
       root.each(d => d.target = {
         x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
@@ -126,7 +128,6 @@ const SunburstChart = ({ data }) => {
       .style("cursor", "pointer")
       .on("click", clicked);
 
-    // Agregar labels
     const label = svg.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
@@ -137,9 +138,8 @@ const SunburstChart = ({ data }) => {
       .attr("dy", "0.35em")
       .attr("fill-opacity", d => +labelVisible(d.current))
       .attr("transform", d => labelTransform(d.current))
-      .text(d => d.data.name);
+      .text(d => shortenText(d.data.name, 10));  // Recortar textos largos
 
-    // Agregar círculo para resetear zoom
     const parent = svg.append("circle")
       .datum(root)
       .attr("r", radius)
@@ -152,7 +152,7 @@ const SunburstChart = ({ data }) => {
   return (
     <>
       <svg ref={svgRef}></svg>
-      <div ref={tooltipRef} className="tooltip" style={{ position: 'absolute', backgroundColor: 'white', border: '1px solid black', padding: '80px', borderRadius: '5px', visibility: 'hidden' }}></div>
+      <div ref={tooltipRef} className="tooltip" style={{ position: 'absolute', backgroundColor: 'white', border: '1px solid black', padding: '8px', borderRadius: '5px', visibility: 'hidden' }}></div>
     </>
   );
 };

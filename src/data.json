@@ -2,11 +2,11 @@
     "name": "flare",
     "children": [
         {
-            "name": "PAGOS DIGITALES  ",
+            "name": "PAGOS DIGITALES",
             "categoria": " PAGOS ",
             "madurez": "6",
-            "oportuniades": " Pagos Inmediatos crecen gracias al QR  Interoperable​ -Experiencias más fluidas, con menos pasos y fricciones para el usuario.​ -Tarjetas (CR/DB) medio de pago con mejores experiencias para el usuario.​",
-            "tensiones": "Principal barrera de adopción de los pagos digitales es Complejidad en el Onbording.​ Seguridad: Desconfianza del usuario.​Temas de inclusión como pequeñas fuentes de texto que dificultan su uso ​Interoperabilidad entre los diferentes actores",
+            "oportunidades": " Pagos Inmediatos crecen gracias al QR  Interoperable​ -Experiencias más fluidas, con menos pasos y fricciones para el usuario.​ -Tarjetas (CR/DB) medio de pago con mejores experiencias para el usuario.",
+            "tensiones": "Principal barrera de adopción de los pagos digitales es Complejidad en el Onbording.​ Seguridad: Desconfianza del usuario.Temas de inclusión como pequeñas fuentes de texto que dificultan su uso ​Interoperabilidad entre los diferentes actores",
             "description": "El uso de pagos digitales está en aumento, potenciado por experiencias intuitivas, seguras, menor puntos de fricción e inclusión.",
             "children": [
                 {
@@ -14,8 +14,7 @@
                     "name": "Pagos sin contacto",
                     "madurez": "7",
                     "description": "Los pagos sin contacto están ganando popularidad en todo el mundo, permitiendo a los usuarios simplemente tocar la terminal para pagar con una tarjeta contactless, un dispositivo móvil o un wearable",
-                    "oportuniades": "​",
-                    "tensiones": "",
+
                     "children": [
                         {
                             "name": "Tarjetas con tecnología NFC",
@@ -43,7 +42,7 @@
                     "name": "Pagos a un click",
                     "categoria": " PAGOS DIGITALES",
                     "madurez": "6",
-                    "oportuniades": "Mejora la Experiencia del Usuario al disminuir el número de pasos para realizar un pago. Menos fricciones para realizar los pagos, lo que se traduce en mayor conversión.",
+                    "oportunidades": "Mejora la Experiencia del Usuario al disminuir el número de pasos para realizar un pago. Menos fricciones para realizar los pagos, lo que se traduce en mayor conversión.",
                     "tensiones": "  la necesidad de tecnología compatible tanto por parte de los comerciantes como de los consumidores. La resistencia al cambio y las preocupaciones sobre la privacidad.                    ",
                     "description": "Los pagos a un clic  se están transformando con la introducción de varios servicios de pago popular,con el crecimiento del comercio electrónico y un nuevo botón de pago para tarjetas de crédito, débito MasterCard y Visa",
                     "children": [
@@ -63,7 +62,7 @@
                     "name": "Billeteras",
                     "categoria": " PAGOS DIGITALES",
                     "madurez": "7",
-                    "oportuniades": "Potenciar nuevos medios de pago como las billeteras y la comercialización de productos embebidos gracias a Pagos inmediatos BanRep. ",
+                    "oportunidades": "Potenciar nuevos medios de pago como las billeteras y la comercialización de productos embebidos gracias a Pagos inmediatos BanRep. ",
                     "tensiones": "Dependencia tecnológica El usuario puede presentar problemas en áreas con mala cobertura de internet y sin su dispositivo al pagar ",
                     "description": "Las billeteras digitales están ganando popularidad con un crecimiento anual estimado del 12% hasta 2026, Los avances en tecnología de pagos, como Wallet Express de Samsung y MasterCard, están mejorando la facilidad de uso. ",
                     "children": [
@@ -103,7 +102,7 @@
                     "name": "Tarjetas Bancarias",
                     "categoria": " PAGOS DIGITALES",
                     "madurez": "6",
-                    "oportuniades": "",
+                    "oportunidades": "",
                     "tensiones": "",
                     "description": "Esta tarjeta permite realizar transacciones en establecimientos comerciales, retirar efectivo en cajeros automáticos, transferir fondos a otras cuentas y realizar diversas operaciones adicionales.",
                     "children": [
@@ -130,7 +129,7 @@
             "name": "PAGOS \nACTIVOS DIGITALES",
             "categoria": " PAGOS ",
             "madurez": "6",
-            "oportuniades": "Habilitar opciones como Visa Direct que permiten realizar devoluciones parciales a Tarjetas de Crédito, disminuyendo costos operativos y de transferencia al exterior. ",
+            "oportunidades": "Habilitar opciones como Visa Direct que permiten realizar devoluciones parciales a Tarjetas de Crédito, disminuyendo costos operativos y de transferencia al exterior. ",
             "tensiones": "La adopción y regulación de los criptoactivos presenta desafíos en términos de seguridad y estabilidad financiera. Garantizar la seguridad y confiabilidad de las transacciones blockchain.",
             "description": "El uso de criptomonedas como método de pago en la industria del turismo está creciendo. Los bancos centrales exploran la adopción de monedas digitales. ",
             "children": [
@@ -174,7 +173,7 @@
             "name": "PAGOS TRANSFRONTRIZOS",
             "categoria": " PAGOS ",
             "madurez": "8",
-            "oportuniades": "Reducción de la dependencia de Bancos Tradicionales. Integración de Tecnologías de Pago Avanzadas. Plataformas que permiten al usuario gestionar su dinero en múltiples monedas. ",
+            "oportunidades": "Reducción de la dependencia de Bancos Tradicionales. Integración de Tecnologías de Pago Avanzadas. Plataformas que permiten al usuario gestionar su dinero en múltiples monedas. ",
             "tensiones": " Gestión de Dinero Internacional Puede ser complicada debido a las diferencias en las regulaciones financieras entre países. Fluctuaciones de divisas y regulaciones financieras.",
             "description": "Los pagos Transfronterizos consolidan iniciativas  locales y regionales que desafían el dominio tradicional de los pagos, con aumentos notables y soluciones tecnológicas.",
             "children": [
@@ -214,7 +213,7 @@
             "name": "SEGURIDAD PAGOS",
             "categoria": " PAGOS ",
             "madurez": "8",
-            "oportuniades": "Mejorar módulos de seguridad de prevención de fraudes. Implementación de modelos apoyados con IA que permitan identificar en línea modelos de confianza.",
+            "oportunidades": "Mejorar módulos de seguridad de prevención de fraudes. Implementación de modelos apoyados con IA que permitan identificar en línea modelos de confianza.",
             "tensiones": " Usuarios más reservados con la entrega de sus datos. Mayor sofisticación en modalidades como el phishing y la ingeniería social.",
             "description": "Proteger la información personal y financiera de las personas cuando  realizan transacciones electrónicas.",
             "children": [
@@ -229,7 +228,6 @@
                 {
                     "name": "Autenticación 2-3 FA / Biométrica",
                     "value": 3698
-
                 }
             ]
         }
